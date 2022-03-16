@@ -16,19 +16,19 @@ class Retourcontrolleur extends Controller
         $request->validate([
             'emprunteur'=>'required',
             'livre'=>'required',
-            'quantiteR'=>'required',
-            'dateR'=>'required',
+            'quantiteR'=>'required'
+            
         ]);
-        \DB::table('retour')->insert([
-            'emprunteur'=>$request->emprunteur,
-            'livre'=>$request->livre,
-            'quantiteR'=>$request->quantiteR,
-            'dateR'=>$request->dateR,
-        ]); 
-        //  return Response()->json(["message"=>"insertion sussess"]);
-   
 
-    }
+         \DB::statement("CALL sp_retour(?,?,?)",[
+            $request->emprunteur,
+            $request->livre,
+            $request->quantiteR
+        ]);
+
+        return Response()->json(["message"=>"insertion sussess"]);
+
+     }
     public function edit($id) 
     {
         $data=\DB::select("SELECT * FROM retour WHERE id=?",[$id]);

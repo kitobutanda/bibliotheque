@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Auth;
 class Livrecontrolleur extends Controller
 {
     public function index()
@@ -21,9 +22,11 @@ class Livrecontrolleur extends Controller
             'quantite'=>'required',
             'resume'=>'required',
             'date_publication'=>'required',   
-            'responsable'=>'required', 
+            
         ]);
-        
+
+        $responsable =Auth::user()->noms;
+
        \DB::table('livre')->insert([
             'matricule'=>$request->matricule,
             'titre'=>$request->titre,
@@ -33,7 +36,7 @@ class Livrecontrolleur extends Controller
             'quantite'=>$request->quantite,
             'resume'=>$request->resume,
             'date_publication'=>$request->date_publication,
-            'responsable'=>$request->responsable
+            'responsable' => $responsable,
         ]);
      return Response()->json(["message"=>"insertion sussess"]);
  
@@ -48,7 +51,7 @@ class Livrecontrolleur extends Controller
     {
         \DB::update("UPDATE livre SET matricule = ? , titre = ? ,  edition = ? , domaine = ? , auteur=? , quantite=?,resume=?,date_publication=? ,responsable=?  WHERE id = ? ", [$request->matricule,$request->titre, $request->edition,$request->domaine,$request->auteur,$request->quantite,$request->resume,$request->date_publication,$request->responsable,$request->id]);
         
-        return redirect()->route('emprunteur')->with('modif','modifier avec success');
+        return redirect()->route('livre')->with('modif','modifier avec success');
 
     }
 

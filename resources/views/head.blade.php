@@ -1,92 +1,46 @@
-<!-- @extends('welcome')
-@section('head') -->
-<div class="row">
-					<div class="col bg-info" >
-						<a class="admin-logo" href="index.html">
-						
-						</a>				
-						<div class="left-nav-toggle " >
-							<a  href="#" class="nav-collapse"><i class="fa fa-bars"></i></a>
-						</div>
-						<div class="left-nav-collapsed" >
-							<a  href="#" class="nav-collapsed"><i class="fa fa-bars"></i></a>
-						</div>
-						<!-- <div class="search-form hidden-xs">
-							<form>
-								<input class="form-control" placeholder="Search for..." type="text"> <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
-							</form>
-						</div> -->
+@extends('layout.master')
+@section('head')
+    <div class="header">
+        <div class="header-left">
+            <div class="menu-icon dw dw-menu"></div>
+            <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+            <div class="header-search">
+                <form>
+                    <div class="form-group mb-0">
+                        <i class="dw dw-search2 search-icon"></i>
+                        <input type="text" class="form-control search-input" placeholder="Search Here">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="dashboard-setting user-notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+                        <i class="dw dw-settings2"></i>
+                    </a>
+                </div>
+            </div>
 
-						<ul class="list-inline top-right-nav ">
-						<!-- 	<li class="dropdown icons-dropdown d-none-m">
-								<a class="dropdown-toggle " data-toggle="dropdown" href="#"><i class="fa fa-envelope"></i> <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div></a>
-								
-								<ul class="dropdown-menu top-dropdown lg-dropdown notification-dropdown">
-									<li>
-										<div class="dropdown-header">
-											<a class="float-right" href="#"><small>Voir tout</small></a> Messages
-										</div>
-										
-										<div class="scrollDiv">
-											<div class="notification-list">
-												
-												<a class="clearfix" href="javascript:%20void(0);">
-													<span class="notification-icon">
-													<img alt="" class="rounded-circle" src="assets/img/avtar-5.png" width="50">
-													</span>
-													<span class="notification-title">
-													XXXXXXXX 
-													<label class="label label-warning float-right">0</label>
-													</span>
-													<span class="notification-description">Aucun message.</span>
-													<span class="notification-time"></span>
-												</a>
-												
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="dropdown icons-dropdown d-none-m">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell"></i> <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div></a>
-								<ul class="dropdown-menu top-dropdown lg-dropdown notification-dropdown">
-									<li>
-										<div class="dropdown-header">
-											<a class="float-right" href="#"><small>Voir tout</small></a> Notifications
-										</div>
-										<div class="scrollDiv">
-											<div class="notification-list">
-												
-												<a class="clearfix" href="javascript:%20void(0);">
-													<span class="notification-icon">
-														<i class=" icon-graph text-danger"></i>
-													</span>
-													<span class="notification-title">CPU Usage</span>
-													<span class="notification-description">Aucune notification.</span>
-													<span class="notification-time">15 minutes ago</span>
-												</a>
-												
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li> -->
-							<li class="dropdown">
-								<a class="right-sidebar-toggle d-none-m" href="javascript:%20void(0);"><i class="fa fa-align-right"></i></a>
-							</li>
-							<li class="dropdown avtar-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-									<img alt="" class="rounded-circle" src="assets/img/kit.PNG" width="30">
-									
-								</a>
-								<ul class="dropdown-menu top-dropdown">
-									<li>
-										<a class="dropdown-item" href="logout.php"><i class="icon-logout"></i>Deconnexion</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				
-<!-- @endsection -->
+            <div class="user-info-dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-icon">
+                            <img src="vendors/images/5.jpg" alt="">
+                        </span>
+                        <span class="user-name">Kikuru brijuth</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                        <a class="dropdown-item" href="profile.php"><i class="dw dw-user1"></i> Profile</a>
+                        <!-- <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a> -->
+                        <!-- <a class="dropdown-item" href="faq.php"><i class="dw dw-help"></i> Help</a> -->
+                        <a class="dropdown-item" href="logout.php"><i class="dw dw-logout"></i> Log Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="github-link">
+                <a href="#" target="_blank"><img src="{{ url('vendors/images/web.png') }}" alt=""></a>
+            </div>
+        </div>
+    </div>
+@endsection

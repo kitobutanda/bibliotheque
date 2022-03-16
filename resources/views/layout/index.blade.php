@@ -16,7 +16,7 @@
     <div class="container">
 
 
-        <div class="navbar navbar-expand bg-dark fixed-top">
+        <div class="navbar navbar-expand bg-light fixed-top">
         <ul id="menu " class="navbar nav">
         <li class="nav-item"><a href="{{Route('livre')}}" class="nav-link">LIVRES</a></li>
         <li class="nav-item"><a href="{{Route('retour')}}" class="nav-link">RETOURS</a></li>
@@ -36,15 +36,12 @@
     <div class="col-md-2 bg-dark fixed-bottom">
 
     </div>
-    <div class="col-md-10">
-    @yield('contenu')
-
-@yield('monscript')
+    <div class="col-md-10 container">
+        @yield('contenu')
+        @yield('monscript')
     </div>
 </div>
-    
 
-  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 </html>

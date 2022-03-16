@@ -8,7 +8,7 @@ class Empruntcontrolleur extends Controller
 {
     public function index()
     {
-       $emprunts=\DB::select("SELECT * FROM emprunt");
+       $emprunts=\DB::select("SELECT * FROM emprunt ORDER  BY id DESC");
        return view('emprunt',compact('emprunts'));
     }
     public function store(Request $request)
@@ -17,17 +17,19 @@ class Empruntcontrolleur extends Controller
             'emprunteur'=>'required',
             'livre_emprunter'=>'required',
             'quantite_prise'=>'required',
-            'date_emprunt'=>'required',
- 
         ]);
-        \DB::table('emprunt')->insert([
-            'emprunteur'=>$request->emprunteur,
-            'livre_emprunter'=>$request->livre_emprunter,
-            'quantite_prise'=>$request->quantite_prise,
-            'date_emprunt'=>$request->date_emprunt,
+
+        \DB::statement("CALL sp_livre(?,?,?)",[
+            $request->emprunteur,
+            $request->livre_emprunter,
+            $request->quantite_prise
         ]);
+
         return Response()->json(["message"=>"insertion sussess"]);
+        
+        
  
+      
     }
     public function edit($id)
     {
@@ -37,7 +39,7 @@ class Empruntcontrolleur extends Controller
     }
     public function update(Request $request)
     {
-         \DB::update("UPDATE emprunt SET emprunteur= ?, livre_emprunter = ? , quantite_prise =? , date_emprunt = ? ",[$request->emprunteur,$request->livre_emprunter,$request->id]);
+         \DB::update("UPDATE emprunt SET emprunteur= ?, livre_emprunter = ? , quantite_prise =?,  date_emprunt = ? ",[$request->emprunteur,$request->livre_emprunter,$request->quantite_prise,$request->date_emprunt,$request->id]);
           return redirect()->Route('emprunt');
      }
     public function delete($id)
@@ -46,6 +48,14 @@ class Empruntcontrolleur extends Controller
      return redirect()->route('emprunt')->with('supprimer', 'supression avec success');
  
     }
+
     
     //
 }
+//\DB::table('emprunt')->insert([
+    //         'emprunteur'=>$request->emprunteur,
+    //         'livre_emprunter'=>$request->livre_emprunter,
+    //         'quantite_prise'=>$request->quantite_prise,
+    //         'date_emprunt'=>$request->date_emprunt
+    //     ]);
+    //    return Response()->json(["message"=>"insertion sussess"]);

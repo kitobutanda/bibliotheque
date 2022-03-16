@@ -1,45 +1,33 @@
-@extends('layout.index')
+@extends('layout.master')
 @section('contenu')
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>emprunt</title>
- </head>
- <body>
-     <div class="container mt-5 pt-5">
-         <a href="/new_retour" class="btn btn-primary offset-10">nouveau retour</a>
-         <table class="table-bordered table stripped">
-             <thead>
-                 <tr>
-                     <th>Numero</th>
-                     <th>Emprunteur</th>
-                     <th>Livre</th>
-                     <th>Quantite</th>
-                     <th>Date</th>
-                     <th>Action</th>
-                </tr>
-             </thead>
-             <tbody>
-                 @foreach($retour as $item)
-                 <tr>
-                     <td>{{$item->id}}</td>
-                     <td>{{$item->emprunteur}}</td>
-                     <td>{{$item->livre}}</td>
-                     <td>{{$item->quantiteR}}</td>
-                     <td>{{$item->dateR}}</td>
-                     <td>
-                         <a href="{{'/edit_retour/'.$item->id}}" class="btn btn-sucsess">edit</a>
-                         <a href="{{'/delete_retour/'.$item->id}}" class="btn btn-danger">delete</a>
-                     </td>
-
-                 </tr>
-                  @endforeach
-             </tbody>
-         </table>
-     </div>
- </body>
- </html>
+    <div class="container mt-5 pt-5">
+        <a href="new_retour" class="btn btn-primary offset-10 mb-2 "><i class="fa fa-plus text-white"> <span>Nouveau</span>
+            </i> </a>
+        <table class="table table-bordered stripped">
+            <thead>
+                <th>Numero</th>
+                <th>Emprunteur</th>
+                <th>Livre</th>
+                <th>Quantite</th>
+                <th>Date</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                @foreach ($retour as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->emprunteur }}</td>
+                        <td>{{ $item->livre }}</td>
+                        <td>{{ $item->quantiteR }}</td>
+                        <td>{{ $item->dateR }}</td>
+                        <td>
+                            <a href="{{ '/edit_retour/' . $item->id }}" class="btn btn-success"> <i
+                                    class="fa fa-edit"></i></a>
+                            <a href="{{ '/delete_retour/' . $item->id }}" class="btn btn-danger">del</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
