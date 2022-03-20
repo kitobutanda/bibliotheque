@@ -34,12 +34,12 @@
 			<!-- ============================================================== -->
 			<!-- 						Topbar Start 							-->
 			<!-- ============================================================== -->
-			<div class="top-bar primary-top-bar">
 			<div class="container-fluid">
-				
-			</div>
+			
+			
 		</div>
-	
+		
+       
         <!-- ============================================================== -->
 		<!-- 						Navigation End	 						-->
 		<!-- ============================================================== -->
@@ -50,7 +50,7 @@
 		<!-- ============================================================== -->
 	
 		
-        <section class="main-content">
+        <section class="offset-1 mt-5 pt-2">
             <div class="row w-no-padding margin-b-30">
 			
 			<div class="col-md-4">
@@ -60,17 +60,20 @@
 								<h2 class="margin-b-5">Nos visiteurs</h2>
 								<p class="text-muted">EMPRUNTEURS </p>
 								
-								
-								 
-								<span class="float-right text-primary widget-r-m"></span>
+<!-- 								 
+								<span class="float-right text-primary widget-r-m">
+									@foreach($countL as $item)
+									<p>{{$item->id}}</p>
+									@endforeach
+								</span> -->
 								
 							</div>
 							<div class="progress margin-b-10  progress-mini">
-								<div class="progress-bar bg-primary"></div>
+								<div style="width:x;" class="progress-bar bg-primary"></div>
 							</div>
 							<!-- <p class="text-muted float-left margin-b-0">Change</p>
 							<p class="text-muted float-right margin-b-0">50%</p> -->
-							
+						
 							                        </div>
                     </div>
                 </div>
@@ -83,77 +86,74 @@
 								<p class="text-muted">LIVRES  DISPONIBLES</p>
 							
 								 
-								<span class="float-right text-primary widget-r-m"></span>
+								<span class="float-right text-primary widget-r-m">
+									@foreach($countL as $item)
+									<p>{{$item->id}}</p>
+									@endforeach
+								</span>
 								
 							</div>
 							<div class="progress margin-b-10  progress-mini">
-								<div  class="progress-bar bg-primary"></div>
+								<div style="width:<" class="progress-bar bg-primary"></div>
 							</div>
-							<!-- <p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">50%</p> -->
-							           </div>
+							
+						 </div>
                     </div>
                 </div>
-				
-				
-				
-               
-				
+		
 				<div class="col-md-4">
                     <div class="widget  bg-light">
                         <div class="row row-table ">
                             <div class="margin-b-30">
 								<h2 class="margin-b-5">livres</h2>
 								<p class="text-muted"> LIVRES EMPRUNTER</p>
+								<!-- //"SELECT COUNT(*) AS id FROM emprunt"); // -->
 								
-								 
-								<span class="float-right text-primary widget-r-m"></span>
+								<span class="float-right text-primary widget-r-m">
+								@foreach($countE as $item)
+									<p>{{$item->id}}</p>
+									@endforeach
+								</span>
 								
 							</div>
 							<div class="progress margin-b-10  progress-mini">
-								<div  class="progress-bar bg-warning"></div>
+								<div style="width:;" class="progress-bar bg-warning"></div>
 							</div>
-							<p class="text-muted float-left margin-b-0">Change</p>
-							<p class="text-muted float-right margin-b-0">50%</p>
-						
-						
-                        </div>
-						
+                  </div>	
                     </div>
-				
-					
                 </div>
-                </div>
-  </div>
 			
-<!-- 
+
   <div class="row offset-4"  >
 	  <div class="col-md-12 ">
 	 
 		<h3>STOCK DE SECURITE</h3>
+		<div class="container pt-5 mt-5">
+            <table class="table-bordered">
+                <thead>
+                    <th>Matricule</th>
+                    <th>Livre</th>
+                    <th>Quantite</th>
+                </thead>
+                <tbody>
+                    <!-- @foreach (as $item)
+                        <tr>
+                            <td>{{ $item->matricule }}</td>
+                            <td>{{ $item->livre }}</td>
+                            <td>{{ $item->quantite }}</td>
+                        </tr>
+                    @endforeach -->
+                </tbody>
+            </table>
+        </div>
 
-	<table id="datatable2" class="table table-striped dt-responsive nowrap">
-			<thead>
-				<tr>
-					<th>N°</th>
-					<th>LIVRE</th>
-					<th>STOCK DE SECURITE</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-				
-						<td></td>
-						<td></td>
-				</tr>
-				
-			</tbody>
-		</table>
 	</div>
-</div> -->
+</div>
 
-
+								
+					
+	  </div>
+  </div>
 
 
 			

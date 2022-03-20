@@ -9,7 +9,7 @@ class Usercontroller extends Controller
    public function index()
    {
        $user=\DB::select("SELECT * FROM users");
-       return view('users',compact('user'));
+       return view('users',\compact('user'));
    }
    
    

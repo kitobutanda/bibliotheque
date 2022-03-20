@@ -60,7 +60,7 @@
                     <li class="dropdown avtar-dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <img alt="" class="rounded-circle" src="assets/img/kit.PNG" width="30">
-                            {{Auth::user()->username}}
+                            <!-- {{Auth::user()->noms}} -->
                         </a>
                         <ul class="dropdown-menu top-dropdown">
                             <li>
@@ -74,7 +74,7 @@
 				</div>
                 
                 
-                <a class="dropdown-item" href="{{route('login')}}"><i class="icon-logout"></i>Deconnexion</a>
+                <!-- <a class="dropdown-item" href="{{route('login')}}"><i class="icon-logout"></i>Deconnexion</a> -->
 
         </div>
 		</div>
@@ -87,7 +87,8 @@
 						<div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
                         <img alt="profile" class="margin-b-10  " src="assets/img/kit.PNG" width="80">
                         <p class="lead margin-b-0 toggle-none"></p>
-                        <p class="text-muted mv-0 toggle-none">Welcome   {{Auth::user()->username}}</p>						
+                        					
+                   <a  class="text-muted mv-0 toggle-none" href="{{route('acceuil')}}">Welcome   {{Auth::user()->username}}</a>
                     </div>
 					
                     <ul class="metisMenu nav flex-column" id="menu">
@@ -117,7 +118,7 @@
                         <li class="nav-item">
                             <a class="nav-link"  href="javascript: void(0)" aria-expanded="false"><i class="fa fa-codepen"></i> <span class="toggle-none">Parametres<span class="fa arrow"></span></span></a>
                             <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
-                                <li class="nav-item "><a class="nav-link" href=""><i class="fa fa-users"><span>utilisateurs</span></i> </a></li>
+                                <li class="nav-item "><a class="nav-link" href="{{route('users')}}"><i class="fa fa-users"><span>utilisateurs</span></i> </a></li>
                                 <li class="nav-item "><a class="nav-link" href=""><i class="fa fa-end"><span>Stock de securite</span></i> </a></li>
 
   

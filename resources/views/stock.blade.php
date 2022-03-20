@@ -14,13 +14,15 @@
         <div class="container pt-5 mt-5">
             <table class="table-bordered">
                 <thead>
-                    <th>Numero</th>
-                    <th>Stock</th>
+                    <th>Matricule</th>
+                    <th>Livre</th>
+                    <th>Quantite</th>
                 </thead>
                 <tbody>
                     @foreach ($stock as $item)
                         <tr>
-                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->matricule }}</td>
+                            <td>{{ $item->livre }}</td>
                             <td>{{ $item->quantite }}</td>
                         </tr>
                     @endforeach

@@ -42,6 +42,10 @@ class Emprunteurcontrolleur extends Controller
     return redirect()->route('emprunteur')->with('supprimer', 'supression avec success');
 
    }
+   public function new()
+   {
+       return view('new_emprunteur');
+   }
    
     //
 }

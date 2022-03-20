@@ -60,4 +60,8 @@ class Livrecontrolleur extends Controller
         \DB::delete(" DELETE FROM  livre WHERE id = ? ",[$id]); 
         return redirect()->route('livre')->with('supprimer', 'supression avec success');
     }
+    public function new()
+    {
+        return view('new_livre');
+    }
 }

@@ -8,8 +8,8 @@ class Stockcontrolleur extends Controller
 {
    public function index()
    {
-       $stock=\DB::select("SELECT * FROM stock");
-       return view('retour',compact('stock'));
+       $stock=\DB::select("SELECT * FROM alerte");
+       return view('acceuil',compact('stock'));
    }
     //
 }

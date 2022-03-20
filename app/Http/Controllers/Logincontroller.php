@@ -16,11 +16,15 @@ class Logincontroller extends Controller
     {
         if( Auth::attempt(['username'=>$request->username , 'password'=>$request->password]))
         {
-            return view('welcome');
+            return view('acceuil');
         }
         else{
             return view ('error');
         }
+    }
+    public function error()
+    {
+        return view('error');
     }
 
 }

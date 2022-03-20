@@ -2,6 +2,7 @@
 @section('contenu')
     <div class="container pt-5 mt-5">
         <h2>NOS LIVRES</h2>
+        <a href="{{route('fpdfL')}}" class=" btn btn-primary offset-10  mb-5"> IMPRIMER </a>
 
         <a href="new_livre" class=" btn btn-primary offset-10"> Nouveau livre </a>
         <table class="table  table-bordered stripped mt-2">

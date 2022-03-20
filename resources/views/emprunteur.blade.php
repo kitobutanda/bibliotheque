@@ -2,6 +2,8 @@
 
 @section('contenu')
     <div class="container mt-5 pt-5">
+    <a href="{{route('fpdfP')}}" class=" btn btn-primary offset-10  mb-5"> IMPRIMER </a>
+
         <a href="{{ Route('emprunteur.new') }}" class="btn btn-primary offset-8">nouveau emprunteur</a>
         <table class="table-bordered table">
             <thead>

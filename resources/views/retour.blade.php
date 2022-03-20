@@ -1,6 +1,8 @@
 @extends('layout.master')
 @section('contenu')
     <div class="container mt-5 pt-5">
+    <a href="{{route('fpdfR')}}" class=" btn btn-primary offset-10  mb-5"> IMPRIMER </a>
+
         <a href="new_retour" class="btn btn-primary offset-10 mb-2 "><i class="fa fa-plus text-white"> <span>Nouveau</span>
             </i> </a>
         <table class="table table-bordered stripped">

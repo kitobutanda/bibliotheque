@@ -18,6 +18,8 @@ class Combocontrolleur extends Controller
     public function index1(){
         $retourlivre=\DB::select("SELECT * FROM emprunt");
         return view ('new_retour',compact('retourlivre'));
+        $countE=\DB::select("SELECT COUNT(*) AS id FROM emprunt");
     }
+    
     //
 }

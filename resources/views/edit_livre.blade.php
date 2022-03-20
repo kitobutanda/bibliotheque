@@ -34,7 +34,7 @@
                         placeholder="entre le domaine" id="domaine"> <br>
                     <input type="text" class="form-control" value="{{ $livres->auteur }} " name="auteur"
                         placeholder="entre l'auteur" id="auteur"> <br>
-                    <input type="number" class="form-control" value="{{ $livres->quantite }} " name="quantite"
+                    <input type="number" min="1" class="form-control" value="{{ $livres->quantite }} " name="quantite"
                         placeholder="entre la quantite" id="quantite"> <br>
                     <input type="text" class="form-control" value="{{ $livres->resume }} " name="resume"
                         placeholder="entre un resume" id="resume"> <br>

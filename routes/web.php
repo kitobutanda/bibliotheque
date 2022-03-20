@@ -9,6 +9,9 @@ use App\Http\Controllers\Stockcontrolleur;
 use App\Http\Controllers\Combocontrolleur;
 use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\Usercontroller;
+use App\Http\Controllers\Fpdfcontroller;
+use App\Http\Controllers\Acceuilcontroller;
+
 
 
 
@@ -26,18 +29,10 @@ use App\Http\Controllers\Usercontroller;
 
 Route::get('/',[Logincontroller::class,'index'])->name('login');
 Route::Post('/authenticate',[Logincontroller::class,'authenticate'])->name('authenticate');
-Route::get('/error', function(){ return view('error');})->name('error');
-
-Route::get('/welcome', function () {  return view('welcome');})->name=('welcome');
-Route::get('/users', function () { return view('users');})->name('users');
-Route::get('/edit_user', function () { return view('edit_user');})->name('users.edit');
-
-Route::get('/head', function () { return view('head');})->name('head');
-
-Route::get('/stock', function () {  return view('stock');})->name('stock');
+Route::get('/error', [Logincontroller::class,'error'])->name('error');
 
 Route::get('/livre',[livrecontrolleur::class,'index'])->middleware(['auth'])->name('livre');
-Route::get('/new_livre', function(){return view('new_livre');})->name('livre.new');
+Route::get('/new_livre',[livrecontrolleur::class,'new'])->name('livre.new');
 Route::post('/store_livre',[Livrecontrolleur::class,'store'])->name('livre.store');
 Route::get('/edit_livre/{id}',[Livrecontrolleur::class,'edit'])->name('livre.edit');
 Route::POST('/update_livre',[Livrecontrolleur::class,'update'])->name('livre.update');
@@ -68,6 +63,17 @@ Route::get('/delete_emprunt/{id}',[Empruntcontrolleur::class,'delete'])->middlew
 
 Route::get('/users',[Usercontroller::class,'index'])->name('Users');
 
-Route::get('/acceuil',function(){
-    return view('acceuil');
-})->name('acceuil');
+Route::get('/acceuil',[Acceuilcontroller::class,'index'])->name('acceuil');
+
+Route::get('/users', [Usercontroller::class,'index'])->name('users');
+Route::get('/edit_user', function () { return view('edit_user');})->name('users.edit');
+
+
+Route::get('/stock', function () {  return view('stock');})->name('stock');
+Route::name('fpdfL')->get('/fpdfL',[Fpdfcontroller::class,'index']); 
+Route::name('fpdfR')->get('/fpdfR',[Fpdfcontroller::class,'index1']); 
+Route::name('fpdfE')->get('/fpdfE',[Fpdfcontroller::class,'index2']); 
+Route::name('fpdfP')->get('/fpdfP',[Fpdfcontroller::class,'index3']);
+Route::name('fpdfday')->get('/fpdfday',[Fpdfcontroller::class,'index4']); 
+
+

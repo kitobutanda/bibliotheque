@@ -9,6 +9,7 @@ class Empruntcontrolleur extends Controller
     public function index()
     {
        $emprunts=\DB::select("SELECT * FROM emprunt ORDER  BY id DESC");
+       
        return view('emprunt',compact('emprunts'));
     }
     public function store(Request $request)
@@ -24,8 +25,8 @@ class Empruntcontrolleur extends Controller
             $request->livre_emprunter,
             $request->quantite_prise
         ]);
-
-        return Response()->json(["message"=>"insertion sussess"]);
+        return redirect()->Route('emprunt.new');
+        // return Response()->json(["message"=>"insertion sussess"]);
         
         
  
@@ -49,7 +50,11 @@ class Empruntcontrolleur extends Controller
  
     }
 
-    
+    public function new(){
+        $retourlivre=\DB::select("SELECT * FROM emprunt");
+        return view ('new_retour',compact('retourlivre'));
+       
+    }
     //
 }
 //\DB::table('emprunt')->insert([

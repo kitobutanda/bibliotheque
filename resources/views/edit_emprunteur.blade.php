@@ -7,8 +7,8 @@
             <label for="">nom</label>
             <input type="text" name="nom" value="{{ $emprunts->nom }}" id="nom" class="form-control"><br>
             <label for="">email</label>
-            <input type="email" name="email" value="{{$emprunts->email}" id="email" class="form-control"><br>
-                <input type="submit" value="modifier">
+            <input type="email" name="email" value="{{$emprunts->email}}" id="email" class="form-control"><br>
+                <input type="submit" value="modifier" class="btn btn-primary">
             </form>
         </div>
 @endsection

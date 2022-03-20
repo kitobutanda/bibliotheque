@@ -8,21 +8,20 @@
                     <th>Numero</th>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>Role</th>
+                    <th>password</th>
                     <th>Action</th>
                 </thead>
                 <tbody>
-
+                @foreach($user as $item)
                     <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->noms}}</td>
+                        <td>{{$item->username}}</td>
+                        <td>{{$item->password}}</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="" class="btn btn-primary">edit</a>
-                        </td>
-
-                    </tr>
+</tr>
+                            @endforeach
+                   
                 </tbody>
             </table>
         </div>

@@ -42,14 +42,7 @@
                 </div>
             </div><br><br>
             <div class="row">
-                <!-- <div class="col-md-6">
-                     <label for=""class="form-control">Date</label>
-
-                     </div>
-                      <div class="col-md-6">
-                     <input type="date" name="dateR" id="dateR"class="form-control"><br>
-
-                     </div> -->
+                
             </div>
             <br><br>
             <input type="submit" value="enregistrer" class="btn btn-primary off-set-4">
